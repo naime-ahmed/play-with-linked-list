@@ -187,6 +187,26 @@ void deleteByValueOnUniqueLL(Node *&head, int value)
     deleteNodeAtSpecificPosition(head, position);
 }
 
+// Get middle element of the LL
+
+void getMid(Node *head)
+{
+
+    Node *fastOne = head;
+    Node *slowOne = head;
+
+    if (head != NULL)
+    {
+        while (fastOne != NULL && fastOne->next != NULL)
+        {
+            fastOne = fastOne->next->next;
+            slowOne = slowOne->next;
+        }
+
+        cout << "The middle element is : " << slowOne->value << endl;
+    }
+}
+
 // Read all value
 void printLL(Node *n)
 {
@@ -281,6 +301,8 @@ int main()
          << "\n"
          << "Choice 10. to get the reverse LL"
          << "\n"
+         << "Choice 11. to get the Middle element"
+         << "\n"
          << "choice 0. for Exit"
          << "\n\n";
 
@@ -288,7 +310,7 @@ int main()
 
     cout << "Alert! initially insert 5-10 value then apply other operation\n\n";
 
-    while (choice <= 10 && choice > 0)
+    while (choice <= 11 && choice > 0)
     {
         switch (choice)
         {
@@ -349,6 +371,8 @@ int main()
             // head = reverseNonRec(head);
             head = reverseLLRecursive(head);
             break;
+        case 11:
+            getMid(head);
         default:
             break;
         }
