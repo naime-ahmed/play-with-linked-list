@@ -1,7 +1,6 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-// All of this program is written on singly linked list
 class Node
 {
 public:
@@ -79,15 +78,15 @@ void pushElement(Node *&head, int value, int pos)
         return;
     }
 
-    pos++;
-    for (int i = 0; i < pos; i++)
+    pos--;
+    for (int i = 1; i < pos; i++)
     {
-        tmp = tmp->next; // u have to handle the tail insertion
+        tmp = tmp->next;
     }
-
+    cout << tmp->value << endl;
     Node *nextTmpNode = tmp->next;
     tmp->next = newNode;
-    newNode = nextTmpNode;
+    newNode->next = nextTmpNode;
 }
 
 // search value from a unique linked list
