@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// All of this program is written on singly linked list
 class Node
 {
 public:
