@@ -30,7 +30,7 @@ int sizeOfLL(Node *head)
 }
 
 // insert element on the linked list
-void insetElement(Node *&head, int value)
+void insertElement(Node *&head, int value)
 {
 
     Node *newNode = new Node(value);
@@ -74,7 +74,7 @@ void pushElement(Node *&head, int value, int pos)
 
     if (pos - 1 == sizeOfLL(head))
     {
-        insetElement(head, value);
+        insertElement(head, value);
         return;
     }
 
@@ -317,7 +317,7 @@ int main()
         case 1:
             cout << "Enter the value to insert: ";
             cin >> val;
-            insetElement(head, val);
+            insertElement(head, val);
             break;
         case 2:
             cout << "Enter the value and pos: ";
