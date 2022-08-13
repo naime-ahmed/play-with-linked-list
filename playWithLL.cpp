@@ -83,7 +83,7 @@ void pushElement(Node *&head, int value, int pos)
     {
         tmp = tmp->next;
     }
-    cout << tmp->value << endl;
+
     Node *nextTmpNode = tmp->next;
     tmp->next = newNode;
     newNode->next = nextTmpNode;
