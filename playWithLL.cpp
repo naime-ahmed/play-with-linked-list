@@ -275,6 +275,41 @@ Node *reverseLLRecursive(Node *&head)
     return newHead;
 }
 
+// sorting the linked list using bubble sort algorithm. Time complexity O(n^2)
+void sortTheLL(Node *&head)
+{
+
+    Node *current = head, *index = NULL;
+    int tmp;
+
+    if (head == NULL)
+    {
+        cout << "Linked list is empty";
+        return;
+    }
+    else
+    {
+
+        while (current != NULL)
+        {
+            index = current->next;
+
+            while (index != NULL)
+            {
+                if (current->value > index->value)
+                {
+
+                    tmp = current->value;
+                    current->value = index->value;
+                    index->value = tmp;
+                }
+                index = index->next;
+            }
+            current = current->next;
+        }
+    }
+}
+
 int main()
 {
     Node *head = NULL;
@@ -303,6 +338,8 @@ int main()
          << "\n"
          << "Choice 11. to get the Middle element"
          << "\n"
+         << "Choice 12. to sort the linked list"
+         << "\n"
          << "choice 0. for Exit"
          << "\n\n";
 
@@ -310,7 +347,7 @@ int main()
 
     cout << "Alert! initially insert 5-10 value then apply other operation\n\n";
 
-    while (choice <= 11 && choice > 0)
+    while (choice <= 12 && choice > 0)
     {
         switch (choice)
         {
@@ -373,6 +410,9 @@ int main()
             break;
         case 11:
             getMid(head);
+        case 12:
+            sortTheLL(head);
+            cout << "Linked list is now sorted" << endl;
         default:
             break;
         }
